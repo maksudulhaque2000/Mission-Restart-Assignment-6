@@ -6,7 +6,7 @@ A fully functional and responsive e-commerce website built with vanilla HTML, CS
 
 **Live Link:** [Your Deployed URL Here]
 
-**GitHub Repository:** [Your Repository URL Here]
+**GitHub Repository:** [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6]
 
 ## ✨ Features Implemented
 
@@ -77,7 +77,7 @@ Mission Restart A6/
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6]
 ```
 
 2. Navigate to the project directory:

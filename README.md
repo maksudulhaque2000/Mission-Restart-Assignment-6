@@ -4,9 +4,55 @@ A fully functional and responsive e-commerce website built with vanilla HTML, CS
 
 ## 🌟 Live Demo
 
-**Live Link:** [Your Deployed URL Here]
+**Live Link:** [https://mission-restart-assignment-6.vercel.app/]
 
 **GitHub Repository:** [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6]
+
+## 🚀 Answer The Questions
+
+---
+
+### ১. What is the difference between null and undefined?
+
+* **Undefined:** যখন আমি কোনো ভেরিয়েবল ডিক্লেয়ার করি কিন্তু তাতে কোনো মান (Value) দিই না, তখন জাভাস্ক্রিপ্ট নিজে থেকেই ওটাকে `undefined` বলে দেয়।
+* **Null:** এটি আমি নিজে থেকে ব্যবহার করি। যখন আমি বোঝাতে চাই যে এই ভেরিয়েবলটি এখন ইচ্ছাকৃতভাবে খালি রাখা হয়েছে বা এর কোনো মান নেই, তখন আমি সেখানে `null` বসিয়ে দিই। 
+
+---
+
+### ২. What is the use of the map() function in JavaScript? How is it different from forEach()?
+
+**Map() ফাংশন:** এটি একটি অ্যারের প্রতিটি উপাদানের ওপর কাজ করে এবং শেষে নতুন একটি অ্যারে রিটার্ন (Return) করে। এটি মেইন অ্যারেকে পরিবর্তন করে না।
+
+**পার্থক্য:**
+* **map():** কাজ শেষ করে সবসময় একটি নতুন অ্যারে দেয়। ডাটা মডিফাই করে নতুন কিছু বানাতে এটি সেরা।
+* **forEach():** এটি শুধু লুপ চালিয়ে অ্যারের উপাদানগুলো দিয়ে কাজ করে, কিন্তু এটি কোনো কিছু রিটার্ন করে না।
+
+---
+
+### ৩. What is the difference between == and ===?
+
+* **== (Loose Equality):** এটি শুধু মান (Value) সমান কি না তা দেখে। এটি ডাটা টাইপ চেক করে না।
+* **=== (Strict Equality):** এটি মান এবং ডাটা টাইপ—দুটোই চেক করে।
+
+---
+
+### ৪. What is the significance of async/await in fetching API data?
+
+সার্ভার বা API থেকে ডাটা আসতে সাধারণত কিছুটা সময় লাগে। 
+* **Async/Await** ব্যবহার করলে জাভাস্ক্রিপ্ট সেই ডাটা না আসা পর্যন্ত অপেক্ষা করে। এতে কোড লেখা এবং পড়া অনেক সহজ হয়ে যায়।
+* এটি ছাড়া কোড লিখলে অনেক সময় এলোমেলো হয়ে যায়। এর মাধ্যমে `try/catch` ব্যবহার করে এরর হ্যান্ডেল করাও অনেক সহজ।
+
+---
+
+### ৫. Explain the concept of Scope in JavaScript (Global, Function, Block).
+
+স্কোপ মানে হলো একটি ভেরিয়েবল আমি কোডের ঠিক কোন কোন জায়গায় ব্যবহার করতে পারব।
+
+* **Global Scope:** ভেরিয়েবলটি যদি কোনো ফাংশনের বাইরে থাকে, তবে কোডের যেকোনো জায়গা থেকে ওটা ব্যবহার করা যায়।
+* **Function Scope:** একটি ফাংশনের ভেতর লেখা ভেরিয়েবল শুধু ওই ফাংশনের ভেতরেই কাজ করবে, বাইরে থেকে ওটা কল করা যাবে না।
+* **Block Scope:** `let` এবং `const` দিয়ে যদি কোনো কার্লি ব্রেস `{ }` এর ভেতর ভেরিয়েবল লিখি, তবে তা শুধু ওই ব্র্যাকেটের ভেতরেই থাকবে।
+
+---
 
 ## ✨ Features Implemented
 

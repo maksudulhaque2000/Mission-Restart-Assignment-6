@@ -1,245 +1,154 @@
-<h1 align="center">SwiftCart - Modern E-Commerce Demo</h1>
+<h1 align="center">SwiftCart - Best Collection For You</h1>
 
 <div align="center">
-  <img src="./Assets/preview.png" height="400" width="800" alt="SwiftCart Preview"/>
+  <img src="./Assets/preview.png" height="400" width="800" alt="SwiftCart Preview" />
 </div>
 
+<div align="center">
+  <a href="https://mission-restart-assignment-6.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-View%20Project-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo Badge" />
+  </a>
+  <a href="https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repository-111827?style=for-the-badge&logo=github&logoColor=white" alt="Repository Badge" />
+  </a>
 </div>
 
-A responsive single-page e-commerce front-end built with HTML, Tailwind CSS + DaisyUI, and vanilla JavaScript. The app consumes real product data from Fake Store API and provides an end-to-end demo shopping flow including browsing, filtering, product details, cart management, and a simulated checkout.
+<div align="center">
+  <a href="https://maksudul-haque.vercel.app/" target="_blank">Portfolio</a> •
+  <a href="https://www.linkedin.com/in/maksudulhaque2000/" target="_blank">LinkedIn</a> •
+  <a href="https://www.facebook.com/maksudulhaque2000" target="_blank">Facebook</a> •
+  <a href="https://www.youtube.com/@maksudulhaque2000" target="_blank">YouTube</a> •
+  <a href="https://github.com/maksudulhaque2000" target="_blank">GitHub</a>
+</div>
 
-## Table of Contents
+## Overview
 
-1. Project Overview
-2. Key Features
-3. Tech Stack
-4. Architecture and Data Flow
-5. Folder Structure
-6. Getting Started
-7. Deployment
-8. API Reference
-9. Cart and Persistence Logic
-10. UX and UI Notes
-11. Known Limitations
-12. Future Improvements
-13. Acknowledgements
+SwiftCart is a modern, responsive e-commerce storefront built with vanilla JavaScript and Tailwind-powered UI components. It uses the Fake Store API to load product data dynamically, lets users browse products by category, view detailed product information, and manage a persistent shopping cart directly in the browser.
 
-## 1. Project Overview
+The project is designed as a clean single-page shopping experience with a polished layout, responsive sections, and practical cart interactions such as quantity updates, checkout simulation, and local storage persistence.
 
-SwiftCart is designed as a clean, modern storefront experience for learning and demonstration purposes. It focuses on:
+## Live Links
 
-- Dynamic product loading from a public API
-- Category-based filtering
-- Product detail exploration via modal
-- Client-side cart functionality with quantity controls
-- Persistent cart state with localStorage
-- Responsive UI for desktop and mobile devices
+- Live Project: [https://mission-restart-assignment-6.vercel.app/](https://mission-restart-assignment-6.vercel.app/)
+- GitHub Repository: [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6](https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6)
+- Portfolio: [https://maksudul-haque.vercel.app/](https://maksudul-haque.vercel.app/)
 
-This project is a front-end demo. No real payment gateway is integrated.
+## Key Features
 
-## 2. Key Features
+- Responsive single-page e-commerce layout with a modern UI.
+- Hero section with a branded banner and strong call to action.
+- Top rated products section generated from API data.
+- Category filters for browsing products by group.
+- Product cards with image, price, rating, and quick actions.
+- Product details modal with description and rating breakdown.
+- Shopping cart sidebar with quantity controls and total calculation.
+- Cart state stored in localStorage for persistence across reloads.
+- Toast notifications for user feedback and actions.
+- Newsletter subscription form with interactive confirmation.
+- Mobile-friendly navigation and smooth scroll behavior.
 
-### Core Experience
-
-- Sticky responsive navigation bar with cart counter badge
-- Hero/banner section with call-to-action
-- "Why Choose Us" section with service highlights
-- Top rated products section (top 3 by API rating)
-- Product grid with image, category, pricing, and rating
-- Newsletter subscription form (client-side demo interaction)
-- Rich footer with quick links and social icons
-
-### Product Discovery
-
-- Loads all categories dynamically from API
-- Creates category filter buttons at runtime
-- Supports "All Products" and category-specific product views
-- Handles loading and error states for product fetch operations
-
-### Product Details
-
-- Opens product details in a modal
-- Shows full product description, rating summary, and pricing
-- Includes quick actions from modal: Add to Cart / Buy Now
-
-### Cart Functionality
-
-- Add item to cart from product card or modal
-- Increase or decrease item quantity
-- Remove single items
-- Clear all cart items with confirmation
-- Real-time cart total and item count calculation
-- Slide-in cart sidebar with overlay
-- Simulated checkout summary and success feedback
-
-### Feedback and Usability
-
-- Toast notifications for key user actions
-- Loading indicators for asynchronous operations
-- Smooth scrolling for anchor navigation
-- Lazy loading for product images
-
-## 3. Tech Stack
+## Technologies Used
 
 - HTML5
-- CSS3 (custom styles)
-- Tailwind CSS (CDN)
-- DaisyUI (CDN)
-- Vanilla JavaScript (ES6+)
-- Font Awesome (CDN)
+- CSS3
+- JavaScript (Vanilla)
+- Tailwind CSS
+- DaisyUI
+- Font Awesome
 - Fake Store API
-- Vercel (deployment configuration via vercel.json)
+- Vercel for deployment
 
-## 4. Architecture and Data Flow
+## API Integration
 
-### Runtime Data Sources
+SwiftCart retrieves live product data from the Fake Store API.
 
-- Product and category data are fetched from Fake Store API endpoints.
-- UI is rendered dynamically based on API responses.
+### Endpoints Used
 
-### Front-End State
+- Products: `https://fakestoreapi.com/products`
+- Categories: `https://fakestoreapi.com/products/categories`
+- Products by Category: `https://fakestoreapi.com/products/category/{category}`
+- Single Product Details: `https://fakestoreapi.com/products/{id}`
 
-The app manages three primary in-memory states:
+## Project Structure
 
-- `allProducts`: full product list
-- `categories`: category names from API
-- `cart`: selected products with quantity
-
-### Initialization Sequence
-
-On `DOMContentLoaded`, the app performs:
-
-1. Load cart state from localStorage
-2. Load categories
-3. Load top-rated products
-4. Load all products
-5. Render cart UI
-
-### Persistence
-
-- Cart state is serialized to localStorage key: `swiftcart_cart`
-- Saved cart is restored automatically on page refresh
-
-## 5. Folder Structure
-
-```text
+```bash
 Mission-Restart-Assignment-6/
-├─ Assets/
-│  └─ banner-image.png
-├─ index.html
-├─ script.js
-├─ styles.css
-├─ vercel.json
-└─ package-lock.json
+├── Assets/
+│   ├── banner-image.png
+│   └── preview.png
+├── index.html
+├── script.js
+├── styles.css
+├── vercel.json
+└── README.md
 ```
 
-## 6. Getting Started
+## How It Works
+
+### 1. Product Loading
+
+When the page loads, the application fetches all products and categories from the Fake Store API. The top-rated section is built by sorting products based on their rating.
+
+### 2. Category Filtering
+
+Users can switch between categories without reloading the page. Selecting a category updates the product grid with matching items.
+
+### 3. Product Details
+
+Each product card includes a details button that opens a modal with a full product description, rating, and add-to-cart action.
+
+### 4. Shopping Cart
+
+Users can add products to the cart, adjust quantities, remove items, clear the cart, and proceed through a simulated checkout flow.
+
+### 5. State Persistence
+
+Cart data is saved in localStorage, so products remain in the cart even after the browser is refreshed.
+
+## Setup and Local Development
+
+This project does not require a build step. You can run it as a static site.
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Edge, Firefox, Safari)
-- Internet connection (for CDN assets and API requests)
+- A modern web browser
+- A code editor such as VS Code
+- Optional: Live Server extension for a smoother local workflow
 
-### Run Locally
+### Steps
 
-Because this is a static front-end project, you can run it directly or through a local server.
+1. Clone the repository.
+   ```bash
+   git clone https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6.git
+   ```
+2. Open the project folder in your code editor.
+3. Launch `index.html` directly in the browser, or use Live Server in VS Code.
+4. Explore the storefront, filter products, and test the cart features.
 
-Option A: Open directly
+## Deployment Notes
 
-1. Open `index.html` in your browser.
+The project is deployed on Vercel as a static frontend application. The included `vercel.json` file rewrites all routes to the root path so the app works correctly as a single-page experience.
 
-Option B: Use a local server (recommended)
+## Customization Ideas
 
-```bash
-# Python 3
-python -m http.server 8000
-```
+- Replace the Fake Store API with your own backend or product database.
+- Add authentication and user accounts.
+- Implement a real checkout flow and payment gateway.
+- Add wishlist or compare functionality.
+- Expand the newsletter form into a real email subscription workflow.
 
-Then open:
+## Author
 
-```text
-http://localhost:8000
-```
+**Maksudul Haque**
 
-Alternative local servers are also fine (for example, VS Code Live Server).
+### Connect With Me
 
-## 7. Deployment
+- Portfolio: [maksudul-haque.vercel.app](https://maksudul-haque.vercel.app/)
+- LinkedIn: [linkedin.com/in/maksudulhaque2000](https://www.linkedin.com/in/maksudulhaque2000/)
+- Facebook: [facebook.com/maksudulhaque2000](https://www.facebook.com/maksudulhaque2000)
+- YouTube: [youtube.com/@maksudulhaque2000](https://www.youtube.com/@maksudulhaque2000)
+- GitHub: [github.com/maksudulhaque2000](https://github.com/maksudulhaque2000)
 
-The project includes `vercel.json` with a rewrite rule for SPA-style routing:
+## License
 
-- All routes rewrite to `/`
-
-Deploy on Vercel as a static site:
-
-1. Import this repository in Vercel
-2. Keep default static settings
-3. Deploy
-
-No build step is required.
-
-## 8. API Reference
-
-Base API: `https://fakestoreapi.com`
-
-Used endpoints:
-
-- `GET /products` -> fetch all products
-- `GET /products/categories` -> fetch all category names
-- `GET /products/category/{category}` -> fetch category-specific products
-- `GET /products/{id}` -> fetch single product details
-
-## 9. Cart and Persistence Logic
-
-### Cart Item Shape
-
-Each cart entry stores product data and quantity.
-
-- Product metadata from API
-- `quantity` field managed by client-side logic
-
-### Price Calculation
-
-Total price is computed using:
-
-- Sum of `item.price * item.quantity` for all cart items
-
-### Quantity Rules
-
-- Increment and decrement controls are provided
-- When quantity reaches 0, item is removed from cart
-
-## 10. UX and UI Notes
-
-- Responsive grid scales from single column (mobile) to multi-column (desktop)
-- Cart sidebar becomes full width on smaller screens
-- Product titles are truncated for layout consistency
-- Star visualization is generated from API rating values
-
-## 11. Known Limitations
-
-- Checkout is simulated using browser alert; no real order lifecycle
-- No authentication or user account system
-- No backend inventory or payment integration
-- API dependency means UI availability depends on Fake Store API uptime
-- Category filter active-state logic relies on implicit browser `event`; explicit event passing would make it more robust
-- A CSS block in `styles.css` (`.truncate-3-lines`) is currently incomplete and should be fixed for valid CSS parsing
-
-## 12. Future Improvements
-
-- Integrate real payment workflow and order confirmation page
-- Add search, sorting, and pagination
-- Improve accessibility (focus states, ARIA enhancements)
-- Add unit/integration tests for cart and data rendering logic
-- Introduce modular JavaScript structure or framework migration path
-- Add product skeleton placeholders for perceived performance
-
-## 13. Acknowledgements
-
-- Fake Store API for open product data
-- Tailwind CSS for utility-first styling
-- DaisyUI for component styling primitives
-- Font Awesome for iconography
-
----
-
-This project is intended for educational and demonstration purposes.
+This project is developed for educational and portfolio purposes. If you want, you can add a specific license later based on your distribution needs.

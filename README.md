@@ -1,244 +1,245 @@
-# SwiftCart E-Commerce 🛍️
+<h1 align="center">SwiftCart - Modern E-Commerce Demo</h1>
 
-A fully functional and responsive e-commerce website built with vanilla HTML, CSS (Tailwind CSS + DaisyUI), and JavaScript. This project fetches real product data from the Fake Store API and provides a complete shopping experience.
+<div align="center">
+  <img src="./Assets/preview.png" height="400" width="800" alt="SwiftCart Preview"/>
+</div>
 
-## 🌟 Live Demo
+</div>
 
-**Live Link:** [https://mission-restart-assignment-6.vercel.app/]
+A responsive single-page e-commerce front-end built with HTML, Tailwind CSS + DaisyUI, and vanilla JavaScript. The app consumes real product data from Fake Store API and provides an end-to-end demo shopping flow including browsing, filtering, product details, cart management, and a simulated checkout.
 
-**GitHub Repository:** [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6]
+## Table of Contents
 
-## 🚀 Answer The Questions
+1. Project Overview
+2. Key Features
+3. Tech Stack
+4. Architecture and Data Flow
+5. Folder Structure
+6. Getting Started
+7. Deployment
+8. API Reference
+9. Cart and Persistence Logic
+10. UX and UI Notes
+11. Known Limitations
+12. Future Improvements
+13. Acknowledgements
 
----
+## 1. Project Overview
 
-### ১. What is the difference between null and undefined?
+SwiftCart is designed as a clean, modern storefront experience for learning and demonstration purposes. It focuses on:
 
-* **Undefined:** যখন আমি কোনো ভেরিয়েবল ডিক্লেয়ার করি কিন্তু তাতে কোনো মান (Value) দিই না, তখন জাভাস্ক্রিপ্ট নিজে থেকেই ওটাকে `undefined` বলে দেয়।
-* **Null:** এটি আমি নিজে থেকে ব্যবহার করি। যখন আমি বোঝাতে চাই যে এই ভেরিয়েবলটি এখন ইচ্ছাকৃতভাবে খালি রাখা হয়েছে বা এর কোনো মান নেই, তখন আমি সেখানে `null` বসিয়ে দিই। 
+- Dynamic product loading from a public API
+- Category-based filtering
+- Product detail exploration via modal
+- Client-side cart functionality with quantity controls
+- Persistent cart state with localStorage
+- Responsive UI for desktop and mobile devices
 
----
+This project is a front-end demo. No real payment gateway is integrated.
 
-### ২. What is the use of the map() function in JavaScript? How is it different from forEach()?
+## 2. Key Features
 
-**Map() ফাংশন:** এটি একটি অ্যারের প্রতিটি উপাদানের ওপর কাজ করে এবং শেষে নতুন একটি অ্যারে রিটার্ন (Return) করে। এটি মেইন অ্যারেকে পরিবর্তন করে না।
+### Core Experience
 
-**পার্থক্য:**
-* **map():** কাজ শেষ করে সবসময় একটি নতুন অ্যারে দেয়। ডাটা মডিফাই করে নতুন কিছু বানাতে এটি সেরা।
-* **forEach():** এটি শুধু লুপ চালিয়ে অ্যারের উপাদানগুলো দিয়ে কাজ করে, কিন্তু এটি কোনো কিছু রিটার্ন করে না।
+- Sticky responsive navigation bar with cart counter badge
+- Hero/banner section with call-to-action
+- "Why Choose Us" section with service highlights
+- Top rated products section (top 3 by API rating)
+- Product grid with image, category, pricing, and rating
+- Newsletter subscription form (client-side demo interaction)
+- Rich footer with quick links and social icons
 
----
+### Product Discovery
 
-### ৩. What is the difference between == and ===?
+- Loads all categories dynamically from API
+- Creates category filter buttons at runtime
+- Supports "All Products" and category-specific product views
+- Handles loading and error states for product fetch operations
 
-* **== (Loose Equality):** এটি শুধু মান (Value) সমান কি না তা দেখে। এটি ডাটা টাইপ চেক করে না।
-* **=== (Strict Equality):** এটি মান এবং ডাটা টাইপ—দুটোই চেক করে।
+### Product Details
 
----
+- Opens product details in a modal
+- Shows full product description, rating summary, and pricing
+- Includes quick actions from modal: Add to Cart / Buy Now
 
-### ৪. What is the significance of async/await in fetching API data?
+### Cart Functionality
 
-সার্ভার বা API থেকে ডাটা আসতে সাধারণত কিছুটা সময় লাগে। 
-* **Async/Await** ব্যবহার করলে জাভাস্ক্রিপ্ট সেই ডাটা না আসা পর্যন্ত অপেক্ষা করে। এতে কোড লেখা এবং পড়া অনেক সহজ হয়ে যায়।
-* এটি ছাড়া কোড লিখলে অনেক সময় এলোমেলো হয়ে যায়। এর মাধ্যমে `try/catch` ব্যবহার করে এরর হ্যান্ডেল করাও অনেক সহজ।
+- Add item to cart from product card or modal
+- Increase or decrease item quantity
+- Remove single items
+- Clear all cart items with confirmation
+- Real-time cart total and item count calculation
+- Slide-in cart sidebar with overlay
+- Simulated checkout summary and success feedback
 
----
+### Feedback and Usability
 
-### ৫. Explain the concept of Scope in JavaScript (Global, Function, Block).
+- Toast notifications for key user actions
+- Loading indicators for asynchronous operations
+- Smooth scrolling for anchor navigation
+- Lazy loading for product images
 
-স্কোপ মানে হলো একটি ভেরিয়েবল আমি কোডের ঠিক কোন কোন জায়গায় ব্যবহার করতে পারব।
+## 3. Tech Stack
 
-* **Global Scope:** ভেরিয়েবলটি যদি কোনো ফাংশনের বাইরে থাকে, তবে কোডের যেকোনো জায়গা থেকে ওটা ব্যবহার করা যায়।
-* **Function Scope:** একটি ফাংশনের ভেতর লেখা ভেরিয়েবল শুধু ওই ফাংশনের ভেতরেই কাজ করবে, বাইরে থেকে ওটা কল করা যাবে না।
-* **Block Scope:** `let` এবং `const` দিয়ে যদি কোনো কার্লি ব্রেস `{ }` এর ভেতর ভেরিয়েবল লিখি, তবে তা শুধু ওই ব্র্যাকেটের ভেতরেই থাকবে।
+- HTML5
+- CSS3 (custom styles)
+- Tailwind CSS (CDN)
+- DaisyUI (CDN)
+- Vanilla JavaScript (ES6+)
+- Font Awesome (CDN)
+- Fake Store API
+- Vercel (deployment configuration via vercel.json)
 
----
+## 4. Architecture and Data Flow
 
-## ✨ Features Implemented
+### Runtime Data Sources
 
-### Core Features
-- ✅ **Responsive Navbar** with logo, menu items, and cart icon with item count
-- ✅ **Hero/Banner Section** with background image and call-to-action button
-- ✅ **Why Choose Us Section** with 4 feature cards (Fast Delivery, 24/7 Support, Secure Payment, Easy Returns)
-- ✅ **Top Rated Products Section** displaying 3 highest-rated products
-- ✅ **Newsletter Subscription Form** with email validation
-- ✅ **Professional Footer** with quick links and social media icons
-- ✅ **Fully Mobile Responsive** design
+- Product and category data are fetched from Fake Store API endpoints.
+- UI is rendered dynamically based on API responses.
 
-### Dynamic Functionality
-- ✅ **Dynamic Category Loading** - Categories fetched from API and displayed as filter buttons
-- ✅ **Category-based Product Filtering** - Click on any category to filter products
-- ✅ **Product Cards** with:
-  - Product image
-  - Truncated title
-  - Price display
-  - Category badge
-  - Star rating visualization
-  - Review count
-  - Details button
-  - Add to Cart button
-- ✅ **Product Detail Modal** - Opens on clicking "Details" button with full product information
+### Front-End State
 
-### Advanced Features (Challenges Completed)
-- ✅ **Add to Cart System** - Click to add products with quantity management
-- ✅ **Cart Count Badge** - Real-time update in navbar
-- ✅ **Cart Sidebar** - Sliding sidebar showing cart items
-- ✅ **Quantity Management** - Increase/decrease product quantity in cart
-- ✅ **Remove from Cart** - Delete individual items
-- ✅ **Cart Total Calculation** - Automatically calculates total price
-- ✅ **LocalStorage Persistence** - Cart data saved across browser sessions
-- ✅ **Loading Spinners** - Beautiful loading animations while fetching data
-- ✅ **Active State Indicators** - Highlighted selected category button
-- ✅ **Toast Notifications** - User-friendly success/error messages
-- ✅ **Smooth Animations** - Hover effects and transitions throughout
+The app manages three primary in-memory states:
 
-## 🛠️ Technology Stack
+- `allProducts`: full product list
+- `categories`: category names from API
+- `cart`: selected products with quantity
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom styles with animations
-- **Tailwind CSS** - Utility-first CSS framework
-- **DaisyUI** - Beautiful component library
-- **Vanilla JavaScript** - ES6+ features
-- **Font Awesome** - Icon library
-- **Fake Store API** - Product data source
+### Initialization Sequence
 
-## 📁 Project Structure
+On `DOMContentLoaded`, the app performs:
 
+1. Load cart state from localStorage
+2. Load categories
+3. Load top-rated products
+4. Load all products
+5. Render cart UI
+
+### Persistence
+
+- Cart state is serialized to localStorage key: `swiftcart_cart`
+- Saved cart is restored automatically on page refresh
+
+## 5. Folder Structure
+
+```text
+Mission-Restart-Assignment-6/
+├─ Assets/
+│  └─ banner-image.png
+├─ index.html
+├─ script.js
+├─ styles.css
+├─ vercel.json
+└─ package-lock.json
 ```
-Mission Restart A6/
-├── index.html          # Main HTML file
-├── styles.css          # Custom CSS styles
-├── script.js           # JavaScript functionality
-├── QUESTIONS.md        # JavaScript Q&A answers in Bangla
-├── Assets/
-│   └── banner-image.png
-└── reference-design/
-    ├── home-page-desktop-view.png
-    ├── all-products-desktop-view.png
-    ├── mobile-view-homepage.png
-    └── mobile-view-products-page.png
-```
 
-## 🚀 How to Run Locally
+## 6. Getting Started
 
-1. Clone the repository:
+### Prerequisites
+
+- A modern web browser (Chrome, Edge, Firefox, Safari)
+- Internet connection (for CDN assets and API requests)
+
+### Run Locally
+
+Because this is a static front-end project, you can run it directly or through a local server.
+
+Option A: Open directly
+
+1. Open `index.html` in your browser.
+
+Option B: Use a local server (recommended)
+
 ```bash
-git clone [https://github.com/maksudulhaque2000/Mission-Restart-Assignment-6]
-```
-
-2. Navigate to the project directory:
-```bash
-cd "Mission Restart A6"
-```
-
-3. Open `index.html` in your browser or use a local server:
-```bash
-# Using Python
+# Python 3
 python -m http.server 8000
-
-# Using Node.js (http-server)
-npx http-server
-
-# Using VS Code Live Server Extension
-Right-click on index.html and select "Open with Live Server"
 ```
 
-4. Open your browser and visit:
-```
+Then open:
+
+```text
 http://localhost:8000
 ```
 
-## 🎯 API Endpoints Used
+Alternative local servers are also fine (for example, VS Code Live Server).
 
-- **All Products:** `https://fakestoreapi.com/products`
-- **All Categories:** `https://fakestoreapi.com/products/categories`
-- **Products by Category:** `https://fakestoreapi.com/products/category/{category}`
-- **Single Product:** `https://fakestoreapi.com/products/{id}`
+## 7. Deployment
 
-## ✅ Assignment Requirements Checklist
+The project includes `vercel.json` with a rewrite rule for SPA-style routing:
 
-### UI/UX Specifications
-- [x] Navbar with logo, menu items, and cart icon
-- [x] Banner/Hero section with image and CTA
-- [x] Features/Why Choose Us section (4 items)
-- [x] Top Rated Products section (3 products)
-- [x] Newsletter subscription form
-- [x] Footer with links and social icons
-- [x] Mobile responsive design
+- All routes rewrite to `/`
 
-### Dynamic Features
-- [x] Category loading and display
-- [x] Category-based product filtering
-- [x] Product cards with all required information
-- [x] Product detail modal
-- [x] Add to Cart functionality
-- [x] Cart calculation
-- [x] Remove from cart
-- [x] Loading spinner
-- [x] Active state for categories
+Deploy on Vercel as a static site:
 
-### Code Quality
-- [x] Clean and readable code
-- [x] Proper comments
-- [x] No dummy text where real data can be shown
-- [x] At least 5 meaningful commits
-- [x] JavaScript questions answered in Bangla
+1. Import this repository in Vercel
+2. Keep default static settings
+3. Deploy
 
-## 📱 Responsive Design
+No build step is required.
 
-The website is fully responsive and tested on:
-- Desktop (1920px and above)
-- Laptop (1024px - 1919px)
-- Tablet (768px - 1023px)
-- Mobile (320px - 767px)
+## 8. API Reference
 
-## 🎨 Key Features Highlights
+Base API: `https://fakestoreapi.com`
 
-### Smart Cart Management
-- Products persist in cart even after page refresh
-- Quantity can be adjusted directly in cart
-- Real-time total price calculation
-- Visual feedback with toast notifications
+Used endpoints:
 
-### Enhanced User Experience
-- Smooth scroll navigation
-- Loading states for all async operations
-- Hover effects on interactive elements
-- Modal for detailed product view
-- Category filtering with active states
+- `GET /products` -> fetch all products
+- `GET /products/categories` -> fetch all category names
+- `GET /products/category/{category}` -> fetch category-specific products
+- `GET /products/{id}` -> fetch single product details
 
-### Performance Optimizations
-- Lazy loading for product images
-- Efficient state management
-- LocalStorage for data persistence
-- Minimal API calls
+## 9. Cart and Persistence Logic
 
-## 🐛 Known Issues
+### Cart Item Shape
 
-None - All features are working as expected! 🎉
+Each cart entry stores product data and quantity.
 
-## 🤝 Contributing
+- Product metadata from API
+- `quantity` field managed by client-side logic
 
-This is an assignment project, but suggestions are welcome!
+### Price Calculation
 
-## 📄 License
+Total price is computed using:
 
-This project is created for educational purposes as part of Programming Hero's Web Development Course.
+- Sum of `item.price * item.quantity` for all cart items
 
-## 👨‍💻 Author
+### Quantity Rules
 
-**Maksudul Haque**
+- Increment and decrement controls are provided
+- When quantity reaches 0, item is removed from cart
+
+## 10. UX and UI Notes
+
+- Responsive grid scales from single column (mobile) to multi-column (desktop)
+- Cart sidebar becomes full width on smaller screens
+- Product titles are truncated for layout consistency
+- Star visualization is generated from API rating values
+
+## 11. Known Limitations
+
+- Checkout is simulated using browser alert; no real order lifecycle
+- No authentication or user account system
+- No backend inventory or payment integration
+- API dependency means UI availability depends on Fake Store API uptime
+- Category filter active-state logic relies on implicit browser `event`; explicit event passing would make it more robust
+- A CSS block in `styles.css` (`.truncate-3-lines`) is currently incomplete and should be fixed for valid CSS parsing
+
+## 12. Future Improvements
+
+- Integrate real payment workflow and order confirmation page
+- Add search, sorting, and pagination
+- Improve accessibility (focus states, ARIA enhancements)
+- Add unit/integration tests for cart and data rendering logic
+- Introduce modular JavaScript structure or framework migration path
+- Add product skeleton placeholders for perceived performance
+
+## 13. Acknowledgements
+
+- Fake Store API for open product data
+- Tailwind CSS for utility-first styling
+- DaisyUI for component styling primitives
+- Font Awesome for iconography
 
 ---
 
-**Note:** This is a demo e-commerce website. No real transactions are processed. The checkout functionality is simulated for demonstration purposes only.
-
-## 🙏 Acknowledgments
-
-- [Fake Store API](https://fakestoreapi.com/) for providing the product data
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [DaisyUI](https://daisyui.com/) for the beautiful component library
-- [Font Awesome](https://fontawesome.com/) for the icon library
-- Programming Hero for the assignment guidelines
-
----
+This project is intended for educational and demonstration purposes.
